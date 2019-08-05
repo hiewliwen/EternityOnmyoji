@@ -1,5 +1,4 @@
 from datetime import datetime
-from time import sleep
 
 import discord
 from discord.ext import commands
@@ -38,54 +37,28 @@ def kirin_params(day_of_week):
 class DailyEvents(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.scheduler = AsyncIOScheduler()
 
-    # @commands.command(aliases=['k'], hidden=True)
-    # async def kirin_hunt(self, ctx, dow=None):
-    #     """
-    #     Creates a Kirin Hunt embed message with the Kirin type for the day.
-    #     Only on Monday - Thursday EST.
-    #     :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
-    #     :param dow: (int) Day of week. 1 = Monday, 2 = Tuesday .... 0 and 7 = Sunday
-    #     :return: (discord.Embed object) Kirin Hunt embed message.
-    #     """
-    #     day_of_week = datetime.now().weekday() if not dow else int(dow)
-    #     print(day_of_week)
-    #
-    #     if not 0 < day_of_week <= 4:
-    #         print('Day of Week is outside of Kirin Hunt days!')
-    #         await ctx.send('Kirin Hunt message is shown outside of event days.')
-    #         return
-    #
-    #     # else:
-    #     #     print('Error with Kirin Hunt message.')
-    #     #     await ctx.send('Error with Kirin Hunt message.')
-    #     #     return
-    #
-    #     kirin_type, embed_colour, kirin_icon_url, kirin_emoji = kirin_params(day_of_week)
-    #
-    #     embed = discord.Embed(title=f'**{kirin_type} Kirin Hunt {kirin_emoji}**',
-    #                           description='**@everyone Get Ready for Kirin Hunt :crossed_swords:**',
-    #                           colour=getattr(discord.Colour, embed_colour)(),
-    #                           timestamp=datetime.utcnow())
-    #
-    #     embed.set_thumbnail(url=DRAGON_MASK)
-    #     msg = await ctx.send(embed=embed)
-    #     await msg.add_reaction(kirin_emoji)
-    #     print('Trigg')
-
-    def kirin_hunt(self):
+    @commands.command(aliases=['k'], hidden=True)
+    async def kirin_hunt(self, ctx, dow=None):
         """
         Creates a Kirin Hunt embed message with the Kirin type for the day.
         Only on Monday - Thursday EST.
+        :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
+        :param dow: (int) Day of week. 1 = Monday, 2 = Tuesday .... 0 and 7 = Sunday
         :return: (discord.Embed object) Kirin Hunt embed message.
         """
-        day_of_week = datetime.now().weekday()
+        day_of_week = datetime.now().weekday() if not dow else int(dow)
+        print(day_of_week)
 
         if not 0 < day_of_week <= 4:
             print('Day of Week is outside of Kirin Hunt days!')
-            # await ctx.send('Kirin Hunt message is shown outside of event days.')
+            await ctx.send('Kirin Hunt message is shown outside of event days.')
             return
+
+        # else:
+        #     print('Error with Kirin Hunt message.')
+        #     await ctx.send('Error with Kirin Hunt message.')
+        #     return
 
         kirin_type, embed_colour, kirin_icon_url, kirin_emoji = kirin_params(day_of_week)
 
@@ -95,14 +68,9 @@ class DailyEvents(commands.Cog):
                               timestamp=datetime.utcnow())
 
         embed.set_thumbnail(url=DRAGON_MASK)
-        # msg = await ctx.send(embed=embed)
-        # await msg.add_reaction(kirin_emoji)
-        print('Trigg')
+        msg = await ctx.send(embed=embed)
+        await msg.add_reaction(kirin_emoji)
 
-    def start_timer(self):
-        self.scheduler.start()
-        self.scheduler.add_job(self.kirin_hunt, trigger='cron', second='*/5')
 
 def setup(bot):
-    DailyEvents(bot).start_timer()
     bot.add_cog(DailyEvents(bot))
