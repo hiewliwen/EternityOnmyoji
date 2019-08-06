@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a3ac80-82d5-4259-b0cb-707f329aadd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/lwhiew.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Eternity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Eternity.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/daily_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/daily_events.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565071342056</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added roles check for manual kirin and guild raid message.">
+      <created>1565079376600</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565079376600</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +185,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added parts of Daily Event cog." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added parts of Daily Event cog." />
+    <MESSAGE value="Added roles check for manual kirin and guild raid message." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added roles check for manual kirin and guild raid message." />
   </component>
 </project>
