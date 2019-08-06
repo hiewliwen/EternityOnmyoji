@@ -62,7 +62,7 @@ class DailyEvents(commands.Cog):
         await self.guild_raid()
 
     async def guild_raid(self):
-        channel = self.bot.get_channel(GENERAL_CHN_ID)
+        channel = self.bot.get_channel(OFFICER_CHN_ID)
         embed = discord.Embed(title='**:shinto_shrine: Guild Raid Reset**',
                               description="Let's :punch: Somebody",
                               colour=discord.Colour.dark_gold())
