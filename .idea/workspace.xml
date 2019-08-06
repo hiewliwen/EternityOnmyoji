@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73a3ac80-82d5-4259-b0cb-707f329aadd4" name="Default Changelist" comment="Added function to change bot's presence every 5 mins.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="73a3ac80-82d5-4259-b0cb-707f329aadd4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cogs/daily_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/daily_events.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565085245622</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="testing cron">
+      <created>1565085683204</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565085683204</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +200,7 @@
     <MESSAGE value="Added parts of Daily Event cog." />
     <MESSAGE value="Added roles check for manual kirin and guild raid message." />
     <MESSAGE value="Added function to change bot's presence every 5 mins." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added function to change bot's presence every 5 mins." />
+    <MESSAGE value="testing cron" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing cron" />
   </component>
 </project>
