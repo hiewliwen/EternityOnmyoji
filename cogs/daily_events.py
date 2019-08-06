@@ -1,20 +1,18 @@
+# Reference: https://stackoverflow.com/questions/53065086/using-apschedule-to-run-awaits-in-background
+
 from datetime import datetime
 
 import discord
-from discord.ext import commands
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-import asyncio
+from discord.ext import commands
 
+GENERAL_CHN_ID: int = 536406529583218701
+OFFICER_CHN_ID: int = 536409484285968425
 DRAGON_MASK = 'https://i.ibb.co/72k8Tbd/Dragon-Mask.png'
+AZURE_WAVE = 'https://i.ibb.co/P5btpS7/Azure-Wave.png'
+AZURE_WAVE_EMOJI = '<:AzureWave:540798886403375142>'
 
-# Dummy server
-# #               [Kirin Type], [Embed Colour], [Kirin Icon URL], [Kirin_Emoji]
-# KIRIN_FIELDS = (['Fire', 'magenta', 'https://i.ibb.co/H2hrjN0/fire.png', '<:FireKirin:606403630437892098>'],  # Monday
-#                 ['Wind', 'teal', 'https://i.ibb.co/872CCmW/wind.png', '<:WindKirin:606403631024963587>'],  # Tuesday
-#                 ['Water', 'blue', 'https://i.ibb.co/mcbSCtX/water.png', '<:WaterKirin:606403630886682624>'],
-#                 # Wednesday
-#                 ['Lightning', 'purple', 'https://i.ibb.co/DYfkjzd/lightning.png',
-#                  '<:LightningKirin:606403630639087627>'])  # Thursday
+# DRAGON_MASK' = 'https://media1.tenor.com/images/5a22184deef81fb772283cf09ef51182/tenor.gif'
 
 #               [Kirin Type], [Embed Colour], [Kirin Icon URL], [Kirin_Emoji]
 KIRIN_FIELDS = (['Fire', 'magenta', 'https://i.ibb.co/H2hrjN0/fire.png', '<:FireKirin:606656436415627277>'],  # Monday
@@ -35,30 +33,19 @@ def kirin_params(day_of_week):
 
 
 class DailyEvents(commands.Cog):
+
     def __init__(self, bot):
         self.bot = bot
+        self.scheduler = AsyncIOScheduler()
 
-    @commands.command(aliases=['k'], hidden=True)
-    async def kirin_hunt(self, ctx, dow=None):
-        """
-        Creates a Kirin Hunt embed message with the Kirin type for the day.
-        Only on Monday - Thursday EST.
-        :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
-        :param dow: (int) Day of week. 1 = Monday, 2 = Tuesday .... 0 and 7 = Sunday
-        :return: (discord.Embed object) Kirin Hunt embed message.
-        """
-        day_of_week = datetime.now().weekday() if not dow else int(dow)
-        print(day_of_week)
+    @commands.command(aliases=['k'])
+    async def manual_kirin_hunt_msg(self, ctx):
+        await self.kirin_hunt()
 
-        if not 0 < day_of_week <= 4:
-            print('Day of Week is outside of Kirin Hunt days!')
-            await ctx.send('Kirin Hunt message is shown outside of event days.')
-            return
+    async def kirin_hunt(self):
+        channel = self.bot.get_channel(GENERAL_CHN_ID)
 
-        # else:
-        #     print('Error with Kirin Hunt message.')
-        #     await ctx.send('Error with Kirin Hunt message.')
-        #     return
+        day_of_week = datetime.now().weekday()
 
         kirin_type, embed_colour, kirin_icon_url, kirin_emoji = kirin_params(day_of_week)
 
@@ -66,11 +53,38 @@ class DailyEvents(commands.Cog):
                               description='**@everyone Get Ready for Kirin Hunt :crossed_swords:**',
                               colour=getattr(discord.Colour, embed_colour)(),
                               timestamp=datetime.utcnow())
-
         embed.set_thumbnail(url=DRAGON_MASK)
-        msg = await ctx.send(embed=embed)
+        msg = await channel.send(embed=embed)
         await msg.add_reaction(kirin_emoji)
+
+    @commands.command(aliases=['g'])
+    async def manual_guild_raid_msg(self, ctx):
+        await self.guild_raid()
+
+    async def guild_raid(self):
+        channel = self.bot.get_channel(GENERAL_CHN_ID)
+        embed = discord.Embed(title='**:shinto_shrine: Guild Raid Reset**',
+                              description="Let's :punch: Somebody",
+                              colour=discord.Colour.dark_gold())
+        embed.set_thumbnail(url=AZURE_WAVE)
+        msg = await channel.send(embed=embed)
+        await msg.add_reaction(AZURE_WAVE_EMOJI)
+
+    def start_timer(self):
+        self.scheduler.start()
+
+        # Monday, Tuesday & Wednesday Kirin Hunt
+        self.scheduler.add_job(self.kirin_hunt, trigger='cron', day_of_week='mon,tue,thu', hour=13, minute=29,
+                               second=30)
+
+        # Daily Guild Hunt
+        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=00)
+
+        # Wednesday Guild Feast & Kirin Hunt
+
+        # Saturday Guild Feast & Kirin Hunt
 
 
 def setup(bot):
+    DailyEvents(bot).start_timer()
     bot.add_cog(DailyEvents(bot))
