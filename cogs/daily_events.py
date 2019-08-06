@@ -5,9 +5,11 @@ from datetime import datetime
 import discord
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
+from discord.utils import get
 
 GENERAL_CHN_ID: int = 536406529583218701
 OFFICER_CHN_ID: int = 536409484285968425
+OFFICER_ROLE_ID: int = 536408787272204289
 DRAGON_MASK = 'https://i.ibb.co/72k8Tbd/Dragon-Mask.png'
 AZURE_WAVE = 'https://i.ibb.co/P5btpS7/Azure-Wave.png'
 AZURE_WAVE_EMOJI = '<:AzureWave:540798886403375142>'
@@ -38,9 +40,15 @@ class DailyEvents(commands.Cog):
         self.bot = bot
         self.scheduler = AsyncIOScheduler()
 
-    @commands.command(aliases=['k'])
+    @commands.command(aliases=['k'], hidden=True)
+    @commands.has_role('Officers')
     async def manual_kirin_hunt_msg(self, ctx):
         await self.kirin_hunt()
+
+    # @manual_kirin_hunt_msg.error
+    # async def manual_kirin_hunt_msg_error(self, ctx, error):
+    #     if isinstance(error, commands.MissingRole):
+    #         await ctx.send(f'"{ctx.command}" is limited to {get(ctx.message.guild.roles, id=OFFICER_ROLE_ID)} only.')
 
     async def kirin_hunt(self):
         channel = self.bot.get_channel(GENERAL_CHN_ID)
@@ -57,9 +65,15 @@ class DailyEvents(commands.Cog):
         msg = await channel.send(embed=embed)
         await msg.add_reaction(kirin_emoji)
 
-    @commands.command(aliases=['g'])
+    @commands.command(aliases=['g'], hidden=True)
+    @commands.has_role('Officers')
     async def manual_guild_raid_msg(self, ctx):
         await self.guild_raid()
+
+    # @manual_guild_raid_msg.error
+    # async def manual_guild_raid_msg_error(self, ctx, error):
+    #     if isinstance(error, commands.MissingRole):
+    #         await ctx.send(f'"{ctx.command}" is limited to {get(ctx.message.guild.roles, id=OFFICER_ROLE_ID)} only.')
 
     async def guild_raid(self):
         channel = self.bot.get_channel(OFFICER_CHN_ID)
