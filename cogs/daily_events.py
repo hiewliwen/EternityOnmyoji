@@ -92,7 +92,7 @@ class DailyEvents(commands.Cog):
                                second=30)
 
         # Daily Guild Hunt
-        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=00)
+        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=6, minute=2, second=0)
 
         # Wednesday Guild Feast & Kirin Hunt
 
