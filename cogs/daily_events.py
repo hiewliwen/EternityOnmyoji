@@ -26,10 +26,10 @@ KIRIN_FIELDS = (['Fire', 'magenta', 'https://i.ibb.co/H2hrjN0/fire.png', '<:Fire
 
 
 def kirin_params(day_of_week):
-    kirin_type = KIRIN_FIELDS[day_of_week - 1][0]
-    embed_colour = KIRIN_FIELDS[day_of_week - 1][1]
-    kirin_icon_url = KIRIN_FIELDS[day_of_week - 1][2]
-    kirin_emoji = KIRIN_FIELDS[day_of_week - 1][3]
+    kirin_type = KIRIN_FIELDS[day_of_week][0]
+    embed_colour = KIRIN_FIELDS[day_of_week][1]
+    kirin_icon_url = KIRIN_FIELDS[day_of_week][2]
+    kirin_emoji = KIRIN_FIELDS[day_of_week][3]
 
     return kirin_type, embed_colour, kirin_icon_url, kirin_emoji
 
