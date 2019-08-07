@@ -13,6 +13,7 @@ OFFICER_ROLE_ID: int = 536408787272204289
 DRAGON_MASK = 'https://i.ibb.co/72k8Tbd/Dragon-Mask.png'
 AZURE_WAVE = 'https://i.ibb.co/P5btpS7/Azure-Wave.png'
 AZURE_WAVE_EMOJI = '<:AzureWave:540798886403375142>'
+DAILY_EVENT_DB = 'databases/daily.db'
 
 # DRAGON_MASK' = 'https://media1.tenor.com/images/5a22184deef81fb772283cf09ef51182/tenor.gif'
 
@@ -39,6 +40,7 @@ class DailyEvents(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.scheduler = AsyncIOScheduler()
+        self.scheduler.add_jobstore('sqlalchemy', url=f'sqlite:///{DAILY_EVENT_DB}')
 
     @commands.command(aliases=['k'], hidden=True)
     @commands.has_role('Officers')
@@ -99,10 +101,10 @@ class DailyEvents(commands.Cog):
 
         # Monday, Tuesday & Wednesday Kirin Hunt
         self.scheduler.add_job(self.kirin_hunt, trigger='cron', day_of_week='mon-thu', hour=20, minute=0,
-                               second=0)
+                               second=0, id='1', replace_existing=True)
 
         # Daily Guild Hunt
-        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0)
+        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0, id='2', replace_existing=True)
 
         # Wednesday Guild Feast & Kirin Hunt
 

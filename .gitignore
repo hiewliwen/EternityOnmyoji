@@ -125,5 +125,4 @@ dmypy.json
 .pyre/
 
 .old
-.idea
 CONFIG.py

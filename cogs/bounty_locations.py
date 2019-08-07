@@ -3,7 +3,7 @@ import sqlite3
 import discord
 from discord.ext import commands
 
-BOUNTY_LOCATION_DB = 'eternity.db'
+BOUNTY_LOCATION_DB = 'databases/eternity.db'
 conn = sqlite3.connect(BOUNTY_LOCATION_DB)
 cur = conn.cursor()
 
