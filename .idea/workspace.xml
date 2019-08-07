@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a3ac80-82d5-4259-b0cb-707f329aadd4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cogs/mystery_amulet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/daily_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/daily_events.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565137965188</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Change Kirin Hunt list index. O = Monday.">
+      <created>1565142627106</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1565142627106</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +231,7 @@
     <MESSAGE value="Added function to change bot's presence every 5 mins." />
     <MESSAGE value="testing cron" />
     <MESSAGE value="Restoring cron to the correct time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Restoring cron to the correct time." />
+    <MESSAGE value="Change Kirin Hunt list index. O = Monday." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Kirin Hunt list index. O = Monday." />
   </component>
 </project>
