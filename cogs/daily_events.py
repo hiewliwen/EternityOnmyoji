@@ -88,8 +88,8 @@ class DailyEvents(commands.Cog):
         self.scheduler.start()
 
         # Monday, Tuesday & Wednesday Kirin Hunt
-        self.scheduler.add_job(self.kirin_hunt, trigger='cron', day_of_week='mon,tue,thu', hour=13, minute=29,
-                               second=30)
+        self.scheduler.add_job(self.kirin_hunt, trigger='cron', day_of_week='mon-thu', hour=20, minute=0,
+                               second=0)
 
         # Daily Guild Hunt
         self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0)
