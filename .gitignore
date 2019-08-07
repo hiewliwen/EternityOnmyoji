@@ -6,6 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
+
 # Distribution / packaging
 .Python
 build/
@@ -124,4 +125,5 @@ dmypy.json
 .pyre/
 
 .old
+.idea
 CONFIG.py
