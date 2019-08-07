@@ -43,6 +43,11 @@ class DailyEvents(commands.Cog):
     @commands.command(aliases=['k'], hidden=True)
     @commands.has_role('Officers')
     async def manual_kirin_hunt_msg(self, ctx):
+        """
+        (.k) Manually trigger the Kirin Hunt message.
+        :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
+        :return: None
+        """
         await self.kirin_hunt()
 
     # @manual_kirin_hunt_msg.error
@@ -68,6 +73,11 @@ class DailyEvents(commands.Cog):
     @commands.command(aliases=['g'], hidden=True)
     @commands.has_role('Officers')
     async def manual_guild_raid_msg(self, ctx):
+        """
+        (.g) Manually trigger the Guild Raid message.
+        :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
+        :return: None
+        """
         await self.guild_raid()
 
     # @manual_guild_raid_msg.error

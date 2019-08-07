@@ -11,7 +11,7 @@ class CogCommands(commands.Cog):
     @commands.is_owner()
     async def load(self, ctx, cog):
         """
-        Load a named cog.
+        (.l) Load a named cog.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :param cog: (str) Name of the cog to be loaded.
         :return: None
@@ -28,7 +28,7 @@ class CogCommands(commands.Cog):
     @commands.is_owner()
     async def unload(self, ctx, cog):
         """
-        Unload a named cog.
+        (.u) Unload a named cog.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :param cog: (str) Name of the cog to be unloaded.
         :return: None
@@ -45,7 +45,7 @@ class CogCommands(commands.Cog):
     @commands.is_owner()
     async def reload(self, ctx, cog):
         """
-        Reload a named cog.
+        (.r) Reload a named cog.
         It will unload, then load.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :param cog: (str) Name of the cog to be reloaded.
@@ -63,7 +63,7 @@ class CogCommands(commands.Cog):
     @commands.is_owner()
     async def reload_all(self, ctx):
         """
-        Reload all the cogs in the cogs folder.
+        (.rr) Reload all the cogs in the cogs folder.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """

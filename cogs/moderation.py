@@ -35,7 +35,7 @@ class Mod(commands.Cog):
     #     await ctx.send(f'{member.mention} is banned by {ctx.author.mention}. [{reason}]')
 
     # @commands.command(aliases=['cl'])
-    @commands.command()
+    @commands.command(hidden=True)
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx, amount: int):
         """

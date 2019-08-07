@@ -68,7 +68,7 @@ class BountyLocations(commands.Cog):
     @commands.command(aliases=['n'])
     async def by_name(self, ctx, *, name):
         """
-        Search bounty locations by shikigami name.
+        (.n) Search bounty locations by shikigami name.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :param name: (str) Shikigami name to be searched.
         :return: (discord.Embed object) Embed message of bounty location(s).
@@ -94,7 +94,7 @@ class BountyLocations(commands.Cog):
     @commands.command(aliases=['c'])
     async def by_clue(self, ctx, *, clue):
         """
-        Search bounty locations by clue(s).
+        (.c) Search bounty locations by clue(s).
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :param clue: (str) Clue(s) to be searched.
         :return: (discord.Embed object) Embed message of bounty location(s).

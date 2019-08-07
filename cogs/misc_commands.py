@@ -9,7 +9,7 @@ class Misc(commands.Cog):
     @commands.command(aliases=['ui'])
     async def userinfo(self, ctx, member: discord.Member = None):
         """
-        Display the information of a specific user.
+        (.ui) Display the information of a specific user.
         If no user param is given, the script will use author's ID.
         :param ctx: (discord.ext.commands.Context object) Mandatory parameter.
         :param member: (discord.Member object) @so_and_so. If 'None', then author ID will be used.

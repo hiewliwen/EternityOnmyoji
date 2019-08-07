@@ -16,7 +16,7 @@ class MysteryCircle(commands.Cog):
     @commands.command(aliases=['m'])
     async def mystery_circle(self, ctx, month: int = None):
         """
-        Display the mystery amulet summoning circle for the month.
+        (.m) Display the mystery amulet summoning circle for the month.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :param month: (int) Optional parameter. Month number (1-12). If empty, function will take current month.
         :return:
