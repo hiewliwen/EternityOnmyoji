@@ -45,7 +45,7 @@ class Misc(commands.Cog):
         """
         utc_now = pytz.utc.localize(datetime.utcnow())
         est_now = utc_now.astimezone(pytz.timezone('America/Cancun')).strftime('%a %-I:%M%p')
-        await ctx.send(f'Current game time is :{est_now} EST')
+        await ctx.send(f'Current game time is : {est_now} EST')
 
 
 def setup(bot):
