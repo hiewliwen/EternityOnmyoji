@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="73a3ac80-82d5-4259-b0cb-707f329aadd4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/bounty_locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/bounty_locations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/cog_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/cog_commands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/daily_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/daily_events.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/misc_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/misc_commands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/moderation.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/moderation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/mystery_amulet.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/mystery_amulet.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565165310908</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated commands help messages.">
+      <created>1565166010511</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565166010511</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +247,7 @@
     <MESSAGE value="Restoring cron to the correct time." />
     <MESSAGE value="Change Kirin Hunt list index. O = Monday." />
     <MESSAGE value="Added mystery amulet summoning circle of the month." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mystery amulet summoning circle of the month." />
+    <MESSAGE value="Updated commands help messages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated commands help messages." />
   </component>
 </project>

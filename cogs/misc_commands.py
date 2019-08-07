@@ -1,5 +1,7 @@
 import discord
 from discord.ext import commands
+import pytz
+from datetime import datetime
 
 
 class Misc(commands.Cog):
@@ -33,6 +35,17 @@ class Misc(commands.Cog):
         embed.add_field(name='Bot?', value=member.bot)
 
         await ctx.send(embed=embed)
+
+    @commands.command(aliases=['gt'])
+    async def game_time(self, ctx):
+        """
+        (.gt) Display current game time in EST format.
+        :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
+        :return: None
+        """
+        utc_now = pytz.utc.localize(datetime.utcnow())
+        est_now = utc_now.astimezone(pytz.timezone('America/Cancun')).strftime('%a %-I:%M%p')
+        await ctx.send(f'Current game time is :{est_now} EST')
 
 
 def setup(bot):
