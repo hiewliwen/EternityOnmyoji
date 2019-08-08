@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="796be039-1700-4708-9907-5c12f1f4521c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/EternityOnmyoji.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/bounty_locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/bounty_locations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/cog_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/cog_commands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/daily_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/daily_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/mystery_amulet.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/mystery_amulet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +17,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -47,6 +42,14 @@
       <option name="presentableId" value="Default" />
       <updated>1565227007844</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated embed message to show display_name. Disable discord messages when load/unload/reload cogs.">
+      <created>1565244704640</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565244704640</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -61,5 +64,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated embed message to show display_name. Disable discord messages when load/unload/reload cogs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated embed message to show display_name. Disable discord messages when load/unload/reload cogs." />
   </component>
 </project>
