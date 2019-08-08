@@ -87,7 +87,7 @@ class BountyLocations(commands.Cog):
 
         for result in results:
             embed_msg = create_embed_message(result)
-            embed_msg.set_footer(text=f'Requested by {ctx.author.name}. Search terms: [{name}]',
+            embed_msg.set_footer(text=f'Requested by {ctx.author.display_name}. Search terms: [{name}]',
                                  icon_url=ctx.author.avatar_url)
             await ctx.send(embed=embed_msg)
 
@@ -113,7 +113,7 @@ class BountyLocations(commands.Cog):
 
         for result in results:
             embed_msg = create_embed_message(result)
-            embed_msg.set_footer(text=f'Requested by {ctx.author.name}. Search terms: [{clue}]',
+            embed_msg.set_footer(text=f'Requested by {ctx.author.display_name}. Search terms: [{clue}]',
                                  icon_url=ctx.author.avatar_url)
             await ctx.send(embed=embed_msg)
 

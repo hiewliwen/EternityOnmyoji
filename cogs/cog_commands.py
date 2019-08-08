@@ -18,7 +18,8 @@ class CogCommands(commands.Cog):
         """
         try:
             self.bot.load_extension(f'cogs.{cog}')
-            await ctx.send(f'{cog} is loaded.')
+            # await ctx.send(f'{cog} is loaded.')
+            print(f'{cog} is loaded.')
         except Exception as e:
             await ctx.send(f'**{cog} cannot be loaded.**')
             print(f'{cog} cannot be loaded.')
@@ -35,7 +36,8 @@ class CogCommands(commands.Cog):
         """
         try:
             self.bot.unload_extension(f'cogs.{cog}')
-            await ctx.send(f'{cog} is unloaded.')
+            # await ctx.send(f'{cog} is unloaded.')
+            print(f'{cog} is unloaded.')
         except Exception as e:
             await ctx.send(f'{cog} cannot be unloaded.')
             print(f'{cog} cannot be unloaded.')
@@ -53,7 +55,8 @@ class CogCommands(commands.Cog):
         """
         try:
             self.bot.reload_extension(f'cogs.{cog}')
-            await ctx.send(f'{cog} is reloaded.')
+            # await ctx.send(f'{cog} is reloaded.')
+            print(f'{cog} is reloaded.')
         except Exception as e:
             await ctx.send(f'{cog} cannot be reloaded.')
             print(f'{cog} cannot be reloaded.')
@@ -72,7 +75,8 @@ class CogCommands(commands.Cog):
                 try:
                     cog = f'cogs.{cog.replace(".py", "")}'
                     self.bot.reload_extension(cog)
-                    await ctx.send(f'{cog} is reloaded.')
+                    # await ctx.send(f'{cog} is reloaded.')
+                    print(f'{cog} is reloaded.')
                 except Exception as e:
                     await ctx.send(f'{cog} cannot be reloaded.')
                     print(f'{cog} cannot be reloaded.')

@@ -5,7 +5,6 @@ from datetime import datetime
 import discord
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
-from discord.utils import get
 
 GENERAL_CHN_ID: int = 536406529583218701
 OFFICER_CHN_ID: int = 536409484285968425
@@ -62,14 +61,17 @@ class DailyEvents(commands.Cog):
 
         day_of_week = datetime.now().weekday()
 
+        if day_of_week >= 5:
+            await channel.send(f'There is no Kirin Hunt today ({datetime.now().strftime("%A")}).')
+            return
+
         kirin_type, embed_colour, kirin_icon_url, kirin_emoji = kirin_params(day_of_week)
 
         embed = discord.Embed(title=f'**{kirin_type} Kirin Hunt {kirin_emoji}**',
-                              description='**@everyone Get Ready for Kirin Hunt :crossed_swords:**',
-                              colour=getattr(discord.Colour, embed_colour)(),
-                              timestamp=datetime.utcnow())
+                              description='**Get Ready for Kirin Hunt :crossed_swords:**',
+                              colour=getattr(discord.Colour, embed_colour)())
         embed.set_thumbnail(url=DRAGON_MASK)
-        msg = await channel.send(embed=embed)
+        msg = await channel.send('@everyone', embed=embed)
         await msg.add_reaction(kirin_emoji)
 
     @commands.command(aliases=['g'], hidden=True)
@@ -104,7 +106,8 @@ class DailyEvents(commands.Cog):
                                second=0, id='1', replace_existing=True)
 
         # Daily Guild Hunt
-        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0, id='2', replace_existing=True)
+        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0, id='2',
+                               replace_existing=True)
 
         # Wednesday Guild Feast & Kirin Hunt
 
