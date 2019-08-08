@@ -1,5 +1,4 @@
 from discord.ext import commands
-import discord
 
 MAX_PURGE_MSG = 20
 
@@ -46,8 +45,9 @@ class Mod(commands.Cog):
         :return: None
         """
         amount = 20 if amount > MAX_PURGE_MSG else amount
+        await ctx.message.delete()
         await ctx.channel.purge(limit=amount + 1)
-        await ctx.send(f'{amount} messages were deleted.')
+        await ctx.send(f'{amount} messages were deleted.', delete_after=5)
 
     @clear.error
     async def clear_error(self, ctx, error):

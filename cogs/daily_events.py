@@ -8,6 +8,7 @@ from discord.ext import commands
 
 GENERAL_CHN_ID: int = 536406529583218701
 OFFICER_CHN_ID: int = 536409484285968425
+BOTTEST_CHN_ID: int = 607838204468658188
 OFFICER_ROLE_ID: int = 536408787272204289
 DRAGON_MASK = 'https://i.ibb.co/72k8Tbd/Dragon-Mask.png'
 AZURE_WAVE = 'https://i.ibb.co/P5btpS7/Azure-Wave.png'
@@ -39,7 +40,7 @@ class DailyEvents(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.scheduler = AsyncIOScheduler()
-        self.scheduler.add_jobstore('sqlalchemy', url=f'sqlite:///{DAILY_EVENT_DB}')
+        # self.scheduler.add_jobstore('sqlalchemy', url=f'sqlite:///{DAILY_EVENT_DB}')
 
     @commands.command(aliases=['k'], hidden=True)
     @commands.has_role('Officers')
@@ -102,12 +103,10 @@ class DailyEvents(commands.Cog):
         self.scheduler.start()
 
         # Monday, Tuesday & Wednesday Kirin Hunt
-        self.scheduler.add_job(self.kirin_hunt, trigger='cron', day_of_week='mon-thu', hour=20, minute=0,
-                               second=0, id='1', replace_existing=True)
+        self.scheduler.add_job(self.kirin_hunt, trigger='cron', day_of_week='mon-thu', hour=20, minute=0, second=0)
 
         # Daily Guild Hunt
-        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0, id='2',
-                               replace_existing=True)
+        self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0)
 
         # Wednesday Guild Feast & Kirin Hunt
 

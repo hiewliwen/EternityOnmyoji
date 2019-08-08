@@ -43,9 +43,13 @@ class Misc(commands.Cog):
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """
-        utc_now = pytz.utc.localize(datetime.utcnow())
-        est_now = utc_now.astimezone(pytz.timezone('America/Cancun')).strftime('%a %-I:%M%p')
-        await ctx.send(f'Current game time is : {est_now} EST')
+        try:
+            utc_now = pytz.utc.localize(datetime.utcnow())
+            est_now = utc_now.astimezone(pytz.timezone('America/Cancun')).strftime('%a %I:%M%p')
+
+            await ctx.send(f'Current game time is : {est_now} EST')
+        except Exception as e:
+            print(e)
 
 
 def setup(bot):

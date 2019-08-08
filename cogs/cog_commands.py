@@ -70,6 +70,7 @@ class CogCommands(commands.Cog):
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """
+        await ctx.message.delete()
         for cog in os.listdir('./cogs'):
             if cog.endswith('.py') and not cog.startswith('_'):
                 try:

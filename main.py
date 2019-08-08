@@ -11,6 +11,7 @@ bot = commands.Bot(command_prefix=['.'])
 CHANNEL_ID = 607838204468658188  # Eternity Onmyoji
 PR_STATUES = CONFIG.PR_STATUES
 
+
 @bot.check
 async def check_commands(ctx):
     if not ctx.message.channel.id == CHANNEL_ID:
@@ -24,6 +25,7 @@ async def on_ready():
     print(bot.user.name)
     print('------------')
 
+    await init_cogs()
     # channel = bot.get_channel(CHANNEL_ID)
     # await channel.send('Ready!')
 
@@ -43,14 +45,18 @@ async def change_pr():
         await bot.change_presence(activity=discord.Game(status))
         await asyncio.sleep(300)
 
-for cog in os.listdir('./cogs'):
-    if cog.endswith('.py') and not cog.startswith('_'):
-        try:
-            cog = f'cogs.{cog.replace(".py", "")}'
-            bot.load_extension(cog)
-        except Exception as e:
-            print(f'{cog} cannot be loaded.')
-            raise e
+
+async def init_cogs():
+    for cog in os.listdir('./cogs'):
+        if cog.endswith('.py') and not cog.startswith('_'):
+            try:
+                cog = f'cogs.{cog.replace(".py", "")}'
+                bot.load_extension(cog)
+                print(f'{cog} is loaded.')
+            except Exception as e:
+                print(f'{cog} cannot be loaded.')
+                raise e
+
 
 bot.loop.create_task(change_pr())
 bot.run(CONFIG.DISCORD_TOKEN)
