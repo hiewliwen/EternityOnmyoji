@@ -3,7 +3,7 @@ import csv
 import sqlite3
 
 BOUNTY_LOCATION_CSV = 'bounty_locations.csv'
-BOUNTY_LOCATION_DB = 'eternity.db'
+BOUNTY_LOCATION_DB = '../databases/eternity.db'
 SECRETS_KEYWORDS = ['wraith', 'umbrella', 'summer', 'shshio', 'aoandon', 'secret', 'maple', 'river', 'storm']
 
 conn = sqlite3.connect(BOUNTY_LOCATION_DB)
@@ -27,14 +27,15 @@ def csv_to_db(csv_file):
                         "secrets" TEXT,
                         "souls" TEXT,
                         "encounters" TEXT,
-                        "others" TEXT);""")
+                        "others" TEXT,
+                        "challenge_tickets" TEXT);""")
 
     with open(csv_file, 'r', newline='\n', encoding='utf-8') as csv_file:
         reader = csv.reader(csv_file)
         next(reader, None)  # Skip header
         for field in reader:
             with conn:
-                cur.execute("INSERT INTO bounty_locations VALUES (?, ?, ?, ?, ?, ?, ?, ?)", field, )
+                cur.execute("INSERT INTO bounty_locations VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", field, )
 
 
 csv_to_db(BOUNTY_LOCATION_CSV)
