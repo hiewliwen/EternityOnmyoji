@@ -46,8 +46,8 @@ class Mod(commands.Cog):
         """
         amount = 20 if amount > MAX_PURGE_MSG else amount
         await ctx.message.delete()
-        await ctx.channel.purge(limit=amount + 1)
-        await ctx.send(f'{amount} messages were deleted.', delete_after=5)
+        await ctx.channel.purge(limit=amount)
+        await ctx.send(f'{amount} messages were deleted.', delete_after=3)
 
     @clear.error
     async def clear_error(self, ctx, error):

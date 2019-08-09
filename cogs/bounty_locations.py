@@ -36,7 +36,7 @@ def create_embed_message(result):
     :param result: (str) Query result(s).
     :return: (discord.Embed object) Embed message.
     """
-    shiki_name, shiki_image, clues, chapters, secrets, souls, encounters, others, challenge_tickets = result
+    shiki_name, shiki_image, clues, explorations, secrets, souls, encounters, others, challenge_tickets = result
 
     embed_msg = discord.Embed(title=f'**<< {shiki_name} >> Bounty Locations**',
                               colour=discord.Colour.gold())
@@ -48,18 +48,25 @@ def create_embed_message(result):
     """
     if clues:
         embed_msg.add_field(name='Clues:', value=clues.replace('\n', ', '), inline=False)
+        # print(repr(clues))
     if challenge_tickets:
         embed_msg.add_field(name='Challenge Tickets:', value=challenge_tickets, inline=False)
-    if chapters:
-        embed_msg.add_field(name='Chapters:', value=chapters, inline=False)
+        # print(repr(challenge_tickets))
+    if explorations:
+        embed_msg.add_field(name='Explorations:', value=explorations, inline=False)
+        # print(repr(chapters))
     if secrets:
         embed_msg.add_field(name='Secrets:', value=secrets, inline=False)
+        # print(repr(secrets))
     if souls:
         embed_msg.add_field(name='Souls:', value=souls, inline=False)
+        # print(repr(souls))
     if encounters:
         embed_msg.add_field(name='Encounters:', value=encounters, inline=False)
+        # print(repr(encounters))
     if others:
         embed_msg.add_field(name='Others:', value=others, inline=False)
+        # print(repr(others))
     return embed_msg
 
 
