@@ -62,7 +62,7 @@ class DailyEvents(commands.Cog):
 
         day_of_week = datetime.now().weekday()
 
-        if day_of_week >= 5:
+        if day_of_week >= 4:
             await channel.send(f'There is no Kirin Hunt today ({datetime.now().strftime("%A")}).')
             return
 

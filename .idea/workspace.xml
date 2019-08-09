@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="796be039-1700-4708-9907-5c12f1f4521c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_main.py" afterDir="false" />
+    <list default="true" id="796be039-1700-4708-9907-5c12f1f4521c" name="Default Changelist" comment="Corrected day_of_week check.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.old" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/daily_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/daily_events.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565250490249</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New gitignore">
+      <created>1565317594335</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565317594335</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -149,6 +158,7 @@
     <MESSAGE value="Updated embed message to show display_name. Disable discord messages when load/unload/reload cogs." />
     <MESSAGE value="Updated requirements.txt" />
     <MESSAGE value="Revert to in-memory apscheduler jobstore because of failures." />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert to in-memory apscheduler jobstore because of failures." />
+    <MESSAGE value="New gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="New gitignore" />
   </component>
 </project>
