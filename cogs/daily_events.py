@@ -72,7 +72,7 @@ class DailyEvents(commands.Cog):
                               description='**Get Ready for Kirin Hunt :crossed_swords:**',
                               colour=getattr(discord.Colour, embed_colour)())
         embed.set_thumbnail(url=DRAGON_MASK)
-        msg = await channel.send('@everyone', embed=embed)
+        msg = await channel.send(f'@everyone {kirin_type} Kirin Hunt', embed=embed)
         await msg.add_reaction(kirin_emoji)
 
     @commands.command(aliases=['g'], hidden=True)
