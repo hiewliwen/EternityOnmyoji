@@ -25,6 +25,7 @@ KIRIN_FIELDS = (['Fire', 'magenta', 'https://i.ibb.co/H2hrjN0/fire.png', '<:Fire
                 ['Lightning', 'purple', 'https://i.ibb.co/DYfkjzd/lightning.png',
                  '<:LightningKirin:606656436910686208>'])  # Thursday
 
+PREV_RAID_MSG = []
 
 def kirin_params(day_of_week):
     kirin_type = KIRIN_FIELDS[day_of_week][0]
@@ -98,6 +99,12 @@ class DailyEvents(commands.Cog):
         embed.set_thumbnail(url=AZURE_WAVE)
         msg = await channel.send(embed=embed)
         await msg.add_reaction(AZURE_WAVE_EMOJI)
+
+        try:
+            await PREV_RAID_MSG.pop().delete()
+        except:
+            pass
+        PREV_RAID_MSG.append(msg)
 
     def start_timer(self):
         self.scheduler.start()
