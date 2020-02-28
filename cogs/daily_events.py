@@ -43,11 +43,11 @@ class DailyEvents(commands.Cog):
         self.scheduler = AsyncIOScheduler()
         # self.scheduler.add_jobstore('sqlalchemy', url=f'sqlite:///{DAILY_EVENT_DB}')
 
-    @commands.command(aliases=['k'], hidden=True)
+    @commands.command(aliases=['km'], hidden=True)
     @commands.has_role('Officers')
     async def manual_kirin_hunt_msg(self, ctx):
         """
-        (.k) Manually trigger the Kirin Hunt message.
+        (.km) Manually trigger the Kirin Hunt message.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """
@@ -76,11 +76,11 @@ class DailyEvents(commands.Cog):
         msg = await channel.send(f'@everyone {kirin_type} Kirin Hunt', embed=embed)
         await msg.add_reaction(kirin_emoji)
 
-    @commands.command(aliases=['g'], hidden=True)
+    @commands.command(aliases=['gm'], hidden=True)
     @commands.has_role('Officers')
     async def manual_guild_raid_msg(self, ctx):
         """
-        (.g) Manually trigger the Guild Raid message.
+        (.gm) Manually trigger the Guild Raid message.
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """
