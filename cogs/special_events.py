@@ -20,7 +20,7 @@ class SpecialEvents(commands.Cog):
 
         if not 1 < len(cell) < 4:
             print('Cell is not formatted correctly.')
-            await ctx.send(f'Search term [{cell}] is not formatted correctly. For example: A1, B4, C65K.')
+            await ctx.send(f'Search term [{cell}] is not formatted correctly. For example: A1, B4, C65.')
             return
 
         try:
