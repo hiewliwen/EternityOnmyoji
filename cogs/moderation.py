@@ -1,6 +1,6 @@
 from discord.ext import commands
 
-MAX_PURGE_MSG = 20
+MAX_PURGE_MSG = 1000
 
 
 class Mod(commands.Cog):
