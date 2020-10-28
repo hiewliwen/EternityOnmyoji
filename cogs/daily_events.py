@@ -1,9 +1,8 @@
 # Reference: https://stackoverflow.com/questions/53065086/using-apschedule-to-run-awaits-in-background
 
-from datetime import datetime
-
 import discord
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from datetime import datetime
 from discord.ext import commands
 
 GENERAL_CHN_ID: int = 536406529583218701
@@ -27,6 +26,7 @@ KIRIN_FIELDS = (['Fire', 'magenta', 'https://i.ibb.co/H2hrjN0/fire.png', '<:Fire
 
 PREV_RAID_MSG = []
 PREV_RAID_REMINDER_MSG = []
+
 
 def kirin_params(day_of_week):
     kirin_type = KIRIN_FIELDS[day_of_week][0]
@@ -122,7 +122,6 @@ class DailyEvents(commands.Cog):
             pass
         PREV_RAID_REMINDER_MSG.append(msg)
 
-
     @commands.command(aliases=['gmr'], hidden=True)
     @commands.has_role('Officers')
     async def manual_guild_raid_msg(self, ctx):
@@ -131,9 +130,8 @@ class DailyEvents(commands.Cog):
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """
+        await ctx.message.delete()
         await self.guild_raid_reminder()
-
-
 
     def start_timer(self):
         self.scheduler.start()
@@ -144,8 +142,6 @@ class DailyEvents(commands.Cog):
         # Daily Guild Raid
         self.scheduler.add_job(self.guild_raid_reminder, trigger='cron', hour=3, minute=0, second=0)
         self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0)
-
-
 
 
 def setup(bot):
