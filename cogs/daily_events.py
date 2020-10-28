@@ -26,6 +26,7 @@ KIRIN_FIELDS = (['Fire', 'magenta', 'https://i.ibb.co/H2hrjN0/fire.png', '<:Fire
                  '<:LightningKirin:606656436910686208>'])  # Thursday
 
 PREV_RAID_MSG = []
+PREV_RAID_REMINDER_MSG = []
 
 def kirin_params(day_of_week):
     kirin_type = KIRIN_FIELDS[day_of_week][0]
@@ -106,18 +107,45 @@ class DailyEvents(commands.Cog):
             pass
         PREV_RAID_MSG.append(msg)
 
+    async def guild_raid_reminder(self):
+        channel = self.bot.get_channel(GENERAL_CHN_ID)
+        embed = discord.Embed(title='**:shinto_shrine: Guild Raid Progress Reminder**',
+                              description="2 more hours to reset. Have we cleared raid?",
+                              colour=discord.Colour.dark_gold())
+        embed.set_thumbnail(url=AZURE_WAVE)
+        msg = await channel.send(embed=embed)
+        await msg.add_reaction(AZURE_WAVE_EMOJI)
+
+        try:
+            await PREV_RAID_REMINDER_MSG.pop().delete()
+        except:
+            pass
+        PREV_RAID_REMINDER_MSG.append(msg)
+
+
+    @commands.command(aliases=['gmr'], hidden=True)
+    @commands.has_role('Officers')
+    async def manual_guild_raid_msg(self, ctx):
+        """
+        (.gmr) Manually trigger the Guild Raid Reminder message.
+        :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
+        :return: None
+        """
+        await self.guild_raid_reminder()
+
+
+
     def start_timer(self):
         self.scheduler.start()
 
-        # Monday, Tuesday & Wednesday Kirin Hunt
+        # Monday - Thursday Kirin Hunt
         self.scheduler.add_job(self.kirin_hunt, trigger='cron', day_of_week='mon-thu', hour=20, minute=0, second=0)
 
-        # Daily Guild Hunt
+        # Daily Guild Raid
+        self.scheduler.add_job(self.guild_raid_reminder, trigger='cron', hour=3, minute=0, second=0)
         self.scheduler.add_job(self.guild_raid, trigger='cron', hour=4, minute=58, second=0)
 
-        # Wednesday Guild Feast & Kirin Hunt
 
-        # Saturday Guild Feast & Kirin Hunt
 
 
 def setup(bot):
