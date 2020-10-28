@@ -1,6 +1,5 @@
-import sqlite3
-
 import discord
+import sqlite3
 from discord.ext import commands
 
 BOUNTY_LOCATION_DB = 'databases/eternity.db'

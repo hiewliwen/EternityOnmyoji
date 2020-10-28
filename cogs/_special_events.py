@@ -1,6 +1,6 @@
 import discord
-from discord.ext import commands
 import openpyxl
+from discord.ext import commands
 
 
 class SpecialEvents(commands.Cog):
@@ -31,7 +31,6 @@ class SpecialEvents(commands.Cog):
         except Exception as e:
             await ctx.send(f'Search term [{cell}] is not formatted correctly. For example: A1, B4.')
             raise e
-            return
 
         if row_letter not in ['A', 'B', 'C', 'D', 'E']:
             await ctx.send(f'Row [{row_letter}] is not part of the picture. Only A-E.')
@@ -40,12 +39,12 @@ class SpecialEvents(commands.Cog):
             await ctx.send(f'Column [{col_number}] is not part of the picture. Only 1-78.')
             return
 
-        EXCEL_FILE = 'Kidomaru Coloring.xlsx'
-        with open(EXCEL_FILE, 'r') as excel_file:
-            color_wb = openpyxl.load_workbook(EXCEL_FILE)
+        excel_file = 'Kidomaru Coloring.xlsx'
+        with open(excel_file, 'r') as excel_file:
+            color_wb = openpyxl.load_workbook(excel_file)
         color_row = [color.value for color in color_wb[row_letter][col_number]]
 
-        await ctx.send(f'Kidomaru Cell [{str(row_letter)+str(col_number)}] is {color_row}')
+        await ctx.send(f'Kidomaru Cell [{str(row_letter) + str(col_number)}] is {color_row}')
 
 
 def setup(bot):

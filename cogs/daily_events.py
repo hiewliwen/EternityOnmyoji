@@ -52,6 +52,7 @@ class DailyEvents(commands.Cog):
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """
+        await ctx.message.delete()
         await self.kirin_hunt()
 
     # @manual_kirin_hunt_msg.error
@@ -85,6 +86,7 @@ class DailyEvents(commands.Cog):
         :param ctx: (discord.ext.commands.Context object). Mandatory parameter.
         :return: None
         """
+        await ctx.message.delete()
         await self.guild_raid()
 
     # @manual_guild_raid_msg.error

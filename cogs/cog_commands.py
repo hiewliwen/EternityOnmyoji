@@ -16,6 +16,8 @@ class CogCommands(commands.Cog):
         :param cog: (str) Name of the cog to be loaded.
         :return: None
         """
+        await ctx.message.delete()
+
         try:
             self.bot.load_extension(f'cogs.{cog}')
             # await ctx.send(f'{cog} is loaded.')
@@ -34,6 +36,8 @@ class CogCommands(commands.Cog):
         :param cog: (str) Name of the cog to be unloaded.
         :return: None
         """
+        await ctx.message.delete()
+
         try:
             self.bot.unload_extension(f'cogs.{cog}')
             # await ctx.send(f'{cog} is unloaded.')
@@ -53,6 +57,8 @@ class CogCommands(commands.Cog):
         :param cog: (str) Name of the cog to be reloaded.
         :return: None
         """
+        await ctx.message.delete()
+
         try:
             self.bot.reload_extension(f'cogs.{cog}')
             # await ctx.send(f'{cog} is reloaded.')
