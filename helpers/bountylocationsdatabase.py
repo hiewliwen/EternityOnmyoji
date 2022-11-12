@@ -42,6 +42,8 @@ def csv_to_db(csv_file):
             with conn:
                 cur.execute("INSERT INTO bounty_locations VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", field, )
         print(f'Completed importing of {csv_file.name} into table.')
-
+    
+    cur.close()
+    conn.close()
 
 csv_to_db(BOUNTY_LOCATION_CSV)
