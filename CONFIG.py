@@ -21,18 +21,18 @@ DAILY_EVENT_DB = 'databases/daily.db'
 KIDOMARU_EVENT = 'helpers/Kidomaru Coloring.xlsx'
 
 # Locations of Images
-DRAGON_MASK = '/images/DragonMask.png'
-AZURE_WAVE = '/images/AzureWave.png'
+DRAGON_MASK = 'images/DragonMask.png'
+AZURE_WAVE = 'images/AzureWave.png'
 AZURE_WAVE_EMOJI = '<:AzureWave:540798886403375142>'
 
 # Month Mystery Circle
-MYSTERY_CIRCLE_LIST = ['/images/Monthly Amulets/m1.png', '/images/Monthly Amulets/m2.png',
-                       '/images/Monthly Amulets/m3.png', '/images/Monthly Amulets/m4.png',
-                       '/images/Monthly Amulets/m5.png', '/images/Monthly Amulets/m6.png']
+MYSTERY_CIRCLE_LIST = ['images/Monthly Amulets/m1.png', '/images/Monthly Amulets/m2.png',
+                       'images/Monthly Amulets/m3.png', '/images/Monthly Amulets/m4.png',
+                       'images/Monthly Amulets/m5.png', '/images/Monthly Amulets/m6.png']
 
 # Kirin
 #               [Kirin Type], [Embed Colour], [Kirin Icon URL], [Kirin_Emoji]
-KIRIN_FIELDS = (['Fire', 'magenta', '/images/Kirins/FireKirin.png', '<:FireKirin:606656436415627277>'],  # Monday
-                ['Wind', 'teal', '/images/Kirins/WindKirin.png', '<:WindKirin:606656434532515859>'],  # Tuesday
-                ['Water', 'blue', '/images/Kirins/WaterKirin.png', '<:WaterKirin:606656436516159501>'],  # Wednesday
-                ['Lightning', 'purple', '/images/Kirins/LightningKirin.png', '<:LightningKirin:606656436910686208>'])  # Thursday
+KIRIN_FIELDS = (['Fire', 'magenta', 'images/Kirins/FireKirin.png', '<:FireKirin:606656436415627277>'],  # Monday
+                ['Wind', 'teal', 'images/Kirins/WindKirin.png', '<:WindKirin:606656434532515859>'],  # Tuesday
+                ['Water', 'blue', 'images/Kirins/WaterKirin.png', '<:WaterKirin:606656436516159501>'],  # Wednesday
+                ['Lightning', 'purple', 'images/Kirins/LightningKirin.png', '<:LightningKirin:606656436910686208>'])  # Thursday
