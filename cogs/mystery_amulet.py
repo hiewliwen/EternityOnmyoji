@@ -21,6 +21,7 @@ class MysteryCircle(commands.Cog):
         :return:
         """
         month = datetime.now().month if not month else month
+        print(month)
 
         mystery_circle_image = MYSTERY_CIRCLE_LIST[month % 6 - 1]
 
