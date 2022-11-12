@@ -26,9 +26,9 @@ AZURE_WAVE = 'images/AzureWave.png'
 AZURE_WAVE_EMOJI = '<:AzureWave:540798886403375142>'
 
 # Month Mystery Circle
-MYSTERY_CIRCLE_LIST = ['images/Monthly Amulets/m1.png', '/images/Monthly Amulets/m2.png',
-                       'images/Monthly Amulets/m3.png', '/images/Monthly Amulets/m4.png',
-                       'images/Monthly Amulets/m5.png', '/images/Monthly Amulets/m6.png']
+MYSTERY_CIRCLE_LIST = ['images/Amulets/m1.png', '/images/Amulets/m2.png',
+                       'images/Amulets/m3.png', '/images/Amulets/m4.png',
+                       'images/Amulets/m5.png', '/images/Amulets/m6.png']
 
 # Kirin
 #               [Kirin Type], [Embed Colour], [Kirin Icon URL], [Kirin_Emoji]
