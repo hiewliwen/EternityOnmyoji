@@ -101,7 +101,7 @@ Misc:
   userinfo       (.ui) Display the information of a specific user.
 MysteryCircle:
   mystery_circle (.m) Display the mystery amulet summoning circle for the month.
-​No Category:
+No Category:
   help           Shows this message
 
 Type .help command for more info on a command.
