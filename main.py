@@ -6,9 +6,10 @@ import discord
 from discord.ext import commands
 
 import CONFIG
+import SECRET
 
 bot = commands.Bot(command_prefix=['.'])
-CHANNEL_ID = 607838204468658188  # Eternity Onmyoji
+CHANNEL_ID = CONFIG.CHANNEL_ID  # Eternity Onmyoji
 PR_STATUES = CONFIG.PR_STATUES
 
 
@@ -59,4 +60,4 @@ async def init_cogs():
 
 
 bot.loop.create_task(change_pr())
-bot.run(CONFIG.DISCORD_TOKEN)
+bot.run(SECRET.DISCORD_TOKEN)

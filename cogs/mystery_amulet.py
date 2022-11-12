@@ -3,9 +3,9 @@ import discord
 from datetime import datetime
 from discord.ext import commands
 
-MYSTERY_CIRCLE_LIST = ['https://i.ibb.co/MsGgyYm/m1.png', 'https://i.ibb.co/5vgRd6z/m2.png',
-                       'https://i.ibb.co/Tbpc3y6/m3.png', 'https://i.ibb.co/tBtQ8kg/m4.png',
-                       'https://i.ibb.co/fCZPWkW/m5.png', 'https://i.ibb.co/ns882JK/m6.png']
+import CONFIG
+
+MYSTERY_CIRCLE_LIST = CONFIG.MYSTERY_CIRCLE_LIST
 
 
 class MysteryCircle(commands.Cog):

@@ -23,3 +23,6 @@ else:
         with open(filename, 'wb') as f:
             f.write(r.content)
         print(f'Downloaded {filename}')
+
+cur.close()
+conn.close()

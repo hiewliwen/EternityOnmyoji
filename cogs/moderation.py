@@ -1,6 +1,8 @@
 from discord.ext import commands
 
-MAX_PURGE_MSG = 1000
+import CONFIG
+
+MAX_PURGE_MSG = CONFIG.MAX_PURGE_MSG
 
 
 class Mod(commands.Cog):
@@ -57,7 +59,6 @@ class Mod(commands.Cog):
             await ctx.send('You need to specify an amount (int) of messages to be clear.')
         if isinstance(error, commands.BadArgument):
             await ctx.send('Requires an integer.')
-
         raise error
 
 

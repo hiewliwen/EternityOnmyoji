@@ -5,24 +5,19 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from datetime import datetime
 from discord.ext import commands
 
-GENERAL_CHN_ID: int = 536406529583218701
-OFFICER_CHN_ID: int = 536409484285968425
-BOTTEST_CHN_ID: int = 607838204468658188
-OFFICER_ROLE_ID: int = 536408787272204289
-DRAGON_MASK = 'https://i.ibb.co/72k8Tbd/Dragon-Mask.png'
-AZURE_WAVE = 'https://i.ibb.co/P5btpS7/Azure-Wave.png'
-AZURE_WAVE_EMOJI = '<:AzureWave:540798886403375142>'
-DAILY_EVENT_DB = 'databases/daily.db'
+import CONFIG
 
-# DRAGON_MASK' = 'https://media1.tenor.com/images/5a22184deef81fb772283cf09ef51182/tenor.gif'
+GENERAL_CHN_ID: int = CONFIG.GENERAL_CHN_ID
+OFFICER_CHN_ID: int = CONFIG.OFFICER_CHN_ID
+BOTTEST_CHN_ID: int = CONFIG.BOTTEST_CHN_ID
+OFFICER_ROLE_ID: int = CONFIG.OFFICER_ROLE_ID
 
-#               [Kirin Type], [Embed Colour], [Kirin Icon URL], [Kirin_Emoji]
-KIRIN_FIELDS = (['Fire', 'magenta', 'https://i.ibb.co/H2hrjN0/fire.png', '<:FireKirin:606656436415627277>'],  # Monday
-                ['Wind', 'teal', 'https://i.ibb.co/872CCmW/wind.png', '<:WindKirin:606656434532515859>'],  # Tuesday
-                ['Water', 'blue', 'https://i.ibb.co/mcbSCtX/water.png', '<:WaterKirin:606656436516159501>'],
-                # Wednesday
-                ['Lightning', 'purple', 'https://i.ibb.co/DYfkjzd/lightning.png',
-                 '<:LightningKirin:606656436910686208>'])  # Thursday
+DRAGON_MASK = CONFIG.DRAGON_MASK
+AZURE_WAVE = CONFIG.AZURE_WAVE
+AZURE_WAVE_EMOJI = CONFIG.AZURE_WAVE_EMOJI
+DAILY_EVENT_DB = CONFIG.DAILY_EVENT_DB
+
+KIRIN_FIELDS = CONFIG.KIRIN_FIELDS
 
 PREV_RAID_MSG = []
 PREV_RAID_REMINDER_MSG = []

@@ -2,6 +2,8 @@ import discord
 import openpyxl
 from discord.ext import commands
 
+import CONFIG
+
 
 class SpecialEvents(commands.Cog):
     def __init__(self, bot):
@@ -39,7 +41,7 @@ class SpecialEvents(commands.Cog):
             await ctx.send(f'Column [{col_number}] is not part of the picture. Only 1-78.')
             return
 
-        excel_file = 'Kidomaru Coloring.xlsx'
+        excel_file = KIDOMARU_EVENT
         with open(excel_file, 'r') as excel_file:
             color_wb = openpyxl.load_workbook(excel_file)
         color_row = [color.value for color in color_wb[row_letter][col_number]]
