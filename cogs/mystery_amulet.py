@@ -28,7 +28,7 @@ class MysteryCircle(commands.Cog):
                                   colour=discord.Colour.dark_gold())
         embed_msg.set_image(url="attachment://image.png")
         embed_msg.set_footer(text=f'Requested by {ctx.author.display_name}.', icon_url=ctx.author.avatar_url)
-        await ctx.send(embed=embed_msg, file=mystery_circle_image)
+        msg = await ctx.send(embed=embed_msg, file=mystery_circle_image)
 
 
 def setup(bot):
