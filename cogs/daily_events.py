@@ -142,5 +142,5 @@ class DailyEvents(commands.Cog):
 
 
 def setup(bot):
-    DailyEvents(bot).start_timer()
+    # DailyEvents(bot).start_timer()
     bot.add_cog(DailyEvents(bot))

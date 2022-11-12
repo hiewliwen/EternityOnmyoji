@@ -22,14 +22,13 @@ class MysteryCircle(commands.Cog):
         """
         month = datetime.now().month if not month else month
 
-        mystery_circle_image = MYSTERY_CIRCLE_LIST[month % 6 - 1]
-        file = discord.File(mystery_circle_image, filename="image.png")
+        mystery_circle_image = discord.File(MYSTERY_CIRCLE_LIST[month % 6 - 1], filename="image.png")
 
         embed_msg = discord.Embed(title=f'{calendar.month_name[month]} Mystery Amulet Circle',
                                   colour=discord.Colour.dark_gold())
         embed_msg.set_image(url="attachment://image.png")
         embed_msg.set_footer(text=f'Requested by {ctx.author.display_name}.', icon_url=ctx.author.avatar_url)
-        await ctx.send(file=file, embed=embed_msg)
+        await ctx.send(file=mystery_circle_image, embed=embed_msg)
 
 
 def setup(bot):
